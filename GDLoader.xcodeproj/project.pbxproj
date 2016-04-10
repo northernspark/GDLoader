@@ -16,6 +16,7 @@
 		7CE14B3C1CB67A44009C4754 /* GDLoaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE14B3B1CB67A44009C4754 /* GDLoaderTests.m */; };
 		7CE14B471CB67A44009C4754 /* GDLoaderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE14B461CB67A44009C4754 /* GDLoaderUITests.m */; };
 		7CE14B561CB67A52009C4754 /* GDLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE14B551CB67A52009C4754 /* GDLoader.m */; };
+		7CE14B5F1CBA849E009C4754 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE14B5E1CBA849E009C4754 /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		7CE14B481CB67A44009C4754 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CE14B541CB67A52009C4754 /* GDLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDLoader.h; sourceTree = "<group>"; };
 		7CE14B551CB67A52009C4754 /* GDLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDLoader.m; sourceTree = "<group>"; };
+		7CE14B5E1CBA849E009C4754 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CE14B5F1CBA849E009C4754 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +87,7 @@
 		7CE14B151CB67A44009C4754 = {
 			isa = PBXGroup;
 			children = (
+				7CE14B5E1CBA849E009C4754 /* StoreKit.framework */,
 				7CE14B201CB67A44009C4754 /* GDLoader */,
 				7CE14B3A1CB67A44009C4754 /* GDLoaderTests */,
 				7CE14B451CB67A44009C4754 /* GDLoaderUITests */,
@@ -423,6 +427,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.northernspark.loader.GDLoader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -434,6 +439,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.northernspark.loader.GDLoader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -502,6 +508,7 @@
 				7CE14B4D1CB67A44009C4754 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7CE14B4E1CB67A44009C4754 /* Build configuration list for PBXNativeTarget "GDLoaderTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +517,7 @@
 				7CE14B501CB67A44009C4754 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7CE14B511CB67A44009C4754 /* Build configuration list for PBXNativeTarget "GDLoaderUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +526,7 @@
 				7CE14B531CB67A44009C4754 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

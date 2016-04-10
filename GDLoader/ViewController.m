@@ -30,15 +30,44 @@
     self.loader.hidesWhenStopped = true;
     [self.view addSubview:self.loader];
 
+    self.label = [[UIButton alloc] initWithFrame:CGRectMake(30.0, self.view.bounds.size.height - 45.0, self.view.bounds.size.width - 60.0, 30.0)];
+    [self.label.titleLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Medium" size:(11.0)]];
+    [self.label setBackgroundColor:[UIColor clearColor]];
+    [self.label setTitleColor:[[UIColor blackColor] colorWithAlphaComponent:0.7] forState:UIControlStateNormal];
+    [self.label setTitle:@"as seen in Grado, download it now!" forState:UIControlStateNormal];
+    [self.label addTarget:self action:@selector(viewAppStore)forControlEvents:UIControlEventTouchDown];
+    [self.view addSubview:self.label];
+    
     self.gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewToggleLoader)];
     self.gesture.delegate = self;
-    [self.view addGestureRecognizer:self.gesture];
+    [self.loader addGestureRecognizer:self.gesture];
     
+
 }
 
 -(void)viewToggleLoader {
     if (!self.loader.animating) [self.loader beginAnimating];
     else [self.loader stopAnimating];
+    
+}
+                  
+-(void)viewAppStore {
+    self.store = [[SKStoreProductViewController alloc] init];
+    self.store.delegate = self;
+    [self.store loadProductWithParameters:@{SKStoreProductParameterITunesItemIdentifier:@"1090719110"} completionBlock:^(BOOL result, NSError *error) {
+        if (result) {
+            [self presentViewController:self.store animated:true completion:nil];
+            
+        }
+        
+    }];
+    
+    //Support more projects like this by downloading our app https://itunes.apple.com/us/app/grado-the-worlds-noticeboard/id1090719110?ls=1&mt=8
+
+}
+
+-(void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController {
+    [self dismissViewControllerAnimated:true completion:nil];
     
 }
 
